@@ -3,6 +3,7 @@ setwd("E:/R/finalProject")
 data<-read.csv("DirectMarketing.csv", header = TRUE)
 head(data)
 tail(data)
+
 #1
 data$Age<-factor(data$Age, levels = c('Young', 'Middle', 'Old'))
 data$Gender <-factor(data$Gender, levels = c('Female', 'Male'))
