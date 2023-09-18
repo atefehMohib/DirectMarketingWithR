@@ -15,6 +15,7 @@ AmountSpent: purchase amount in dollars
 
 Answer the following questions. 
 1- Prepare a summary of all the variables in the data frame using the summary function.
+</hr>
 2- What percentage of this marketer's customers are women?
 3- How many percent of married male customers have annual salaries above 50 thousand dollars?
 4- Draw a graph of the frequency of customers based on age classification so that it has the following characteristics :
