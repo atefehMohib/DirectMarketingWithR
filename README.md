@@ -1,5 +1,5 @@
 # Direct Marketing With R
-<html><body>
+
 This project contains the customer information of a direct marketer who sells his products using direct mail. 
 Download the "DirectMarketing.csv" file and save it as a data frame in R. This file contains the customer information of a direct marketer who sells his products using direct mail. He sends his product catalog to people and customers order the product they need by phone. This marketer has collected its customer data, which contains 1,000 records, and its goal is to see what factors make some of its customers order more than others.
 The variables contained in this data file include the following:
@@ -56,5 +56,4 @@ Together, compare men and women who earn less than the median wage.
 # result
 ![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/07a8c1f8-dc26-4534-a63d-054fcd0070b8)
 
-</body>
-</html>
+
