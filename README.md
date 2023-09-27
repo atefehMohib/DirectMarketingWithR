@@ -82,7 +82,7 @@ sum(data$Gender=="Male"& data$Married =="Married" & data$Salary>50000,na.rm = T)
 barplot(sort(table(data$Age)),main="Age Distribution",xlab = "Age Category", ylim = c(0,600))
 </code>
   <br>
-  ![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/933ddcf9-ea51-43af-a883-049c4b88d1ab)
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/807d4006-2277-4d03-905b-30ec6db6eda5)
 
 <br>
 #5
