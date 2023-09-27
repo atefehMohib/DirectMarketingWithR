@@ -73,21 +73,40 @@ summary(data)
 </code>
 <br>
 #3
-  <code>
-sum(data$Gender=="Male"& data$Married =="Married" & data$Salary>50000,na.rm = T)/sum(data$Gender=="Male"& data$Married =="Married",na.rm = T)*100
+<code>
+ sum(data$Gender=="Male"& data$Married =="Married" & data$Salary>50000,na.rm = T)/sum(data$Gender=="Male"& data$Married =="Married",na.rm = T)*100
 </code>
 <br>
 #4
-  <code>
-barplot(sort(table(data$Age)),main="Age Distribution",xlab = "Age Category", ylim = c(0,600))
+<code>
+ barplot(sort(table(data$Age)),main="Age Distribution",xlab = "Age Category", ylim = c(0,600))
 </code>
-  <br>
+
 ![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/807d4006-2277-4d03-905b-30ec6db6eda5)
 
 <br>
 #5
 <code>
+t<-table(data$Gender,data$Age)
+barplot(t,col=c("green","red"),main="Distribution by Age and Gender",xlab = "Age Category", ylim = c(0,600), legend = row.names(t))
+</code>
   
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/ff0a8b30-c9df-4a71-94bd-b02773b99252)
+
+#6
+<code>
+  amountSpent <- data$AmountSpent
+  hist(amountSpent, breaks = 10,freq = F )
+  xfit <- seq(0,max(amountSpent),length =40)
+  yfit <- dexp(xfit, rate = 1/mean(amountSpent))
+  lines(xfit,yfit, lwd = 2)
+</code>
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/b907bba6-5fd6-4c8f-bbf5-15ecef42a5b9)
+
+#7
+<code>
+boxplot(data$AmountSpent~data$Catalogs , data = data, xlab = "of Catalogs", ylab ="Amount spent per cataloges" , main =" Amount Spent Data")
 </code>
 
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/ded80a03-fdb6-41ff-a5f3-5dd70f21fb04)
 
