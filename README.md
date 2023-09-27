@@ -1,6 +1,7 @@
 # Direct Marketing With R
 
-This project contains the customer information of a direct marketer who sells his products using direct mail. 
+This project contains the customer information of a direct marketer who sells his products using direct mail.
+
 Download the "DirectMarketing.csv" file and save it as a data frame in R. This file contains the customer information of a direct marketer who sells his products using direct mail. He sends his product catalog to people and customers order the product they need by phone. This marketer has collected its customer data, which contains 1,000 records, and its goal is to see what factors make some of its customers order more than others.
 The variables contained in this data file include the following:
 Age: Age category
@@ -52,8 +53,41 @@ B) Someone claims that the difference in the amount of purchases between women a
 <br>
 c) One way to deal with the above problem is to neutralize the effect of wages as much as possible and then check whether it is in the purchase amount Is there a difference between men and women? For this purpose, women and men who have a salary higher than the average salary
 Together, compare men and women who earn less than the median wage.
-<br>
+
 # result
-![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/07a8c1f8-dc26-4534-a63d-054fcd0070b8)
+<br>
+# 1
+<code>
+data$Age<-factor(data$Age, levels = c('Young', 'Middle', 'Old'))
+data$Gender <-factor(data$Gender, levels = c('Female', 'Male'))
+data$OwnHome <-factor(data$OwnHome, levels = c('Own', 'Rent')) 
+data$Married <-factor(data$Married, levels = c('Married', 'Single'))
+data$Location <-factor(data$Location, levels = c('Close', 'Far'))
+data$History <-factor(data$History, levels = c('High', 'Medium','Low'))
+summary(data)
+</code>
+<br>
+# 2
+<code>
+  sum(data$Gender=="Female",na.rm = T)/nrow(data)*100
+</code>
+<br>
+#3
+  <code>
+sum(data$Gender=="Male"& data$Married =="Married" & data$Salary>50000,na.rm = T)/sum(data$Gender=="Male"& data$Married =="Married",na.rm = T)*100
+</code>
+<br>
+#4
+  <code>
+barplot(sort(table(data$Age)),main="Age Distribution",xlab = "Age Category", ylim = c(0,600))
+</code>
+  <br>
+  ![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/933ddcf9-ea51-43af-a883-049c4b88d1ab)
+
+<br>
+#5
+<code>
+  
+</code>
 
 
