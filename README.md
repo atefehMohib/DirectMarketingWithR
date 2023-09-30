@@ -110,3 +110,47 @@ boxplot(data$AmountSpent~data$Catalogs , data = data, xlab = "of Catalogs", ylab
 
 ![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/ded80a03-fdb6-41ff-a5f3-5dd70f21fb04)
 
+# 8
+<code>
+  summary(data)
+ggplot(data, aes(Salary,AmountSpent)) + geom_point(shape = 1 , size = 2) +
+  geom_smooth(method = lm,col ="red", size = 2)+
+  ggtitle("Amount Spent by Salary")
+</code>
+
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/4d96d39d-f2c6-422c-87cf-3dc7b24632c7)
+
+# 9
+<code>
+  library("ggplot2")
+#A
+ggplot(data, aes(Gender,AmountSpent)) + geom_boxplot()+
+stat_summary(fun.y ="mean", geom="point", shape=20, size=4, color="red", fill="red") 
+</code>
+
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/af94cd9c-1292-44b8-8652-0e9687fae45f)
+
+<code>
+#B
+ggplot(data, aes(Gender,Salary)) + geom_boxplot()+
+  stat_summary(fun.y ="mean", geom="point", shape=20, size=4, color="red", fill="red") 
+
+</code>
+
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/189e878d-e93b-4ace-a621-bb972d23f2f8)
+
+
+#C my answer
+<code>
+FMean = mean(data[data$Gender=="Female","Salary"])
+MMean = mean(data[data$Gender=="Male","Salary"])
+data$SalaryLevel <- ifelse((data$Gender=="Female" & data$Salary>FMean)|(data$Gender=="Male" & data$Salary>MMean), "High","Low")
+
+ggplot(data,aes(x=Gender, y=AmountSpent,group=SalaryLevel, shape= SalaryLevel, color = SalaryLevel))+ geom_line(size=1.5) +
+  geom_point(size = 5, fill="grey")+
+  scale_shape_manual(values = c(22,21))
+#C right answer
+data$incomelevel <- ifelse(data$Salary > median(data$Salary), "High Income","Low Income")
+</code>
+![image](https://github.com/atefehMohib/DirectMarketingWithR/assets/16960768/477ba63a-b933-42ef-b336-76890f1fcb5f)
+
